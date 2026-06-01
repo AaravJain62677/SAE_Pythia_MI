@@ -64,7 +64,7 @@ def get_top_activating_sequences(model, sae, feature_idx, texts, top_k=10, windo
     Returns list of (activation_value, token_string) tuples.
     """
     hook_name = "blocks.8.hook_resid_post"
-    all_activations = []   # (activation_value, context_string)
+    all_activations = []   
 
     model.eval()
     with torch.no_grad():
@@ -73,9 +73,9 @@ def get_top_activating_sequences(model, sae, feature_idx, texts, top_k=10, windo
             if tokens.shape[1] < 5:
                 continue
             _, cache = model.run_with_cache(tokens, names_filter=hook_name)
-            acts = cache[hook_name][0]          # (seq_len, d_model)
-            features = sae.encode(acts.to(device))  # (seq_len, d_sae)
-            feat_acts = features[:, feature_idx].cpu()  # (seq_len,)
+            acts = cache[hook_name][0]          
+            features = sae.encode(acts.to(device))  
+            feat_acts = features[:, feature_idx].cpu()  
 
             # Find positions where this feature fires
             for pos in range(len(feat_acts)):
@@ -137,9 +137,9 @@ for feat_id in tqdm(features_to_analyze, desc="Analyzing features"):
             f.write(f"[{val:.3f}] {repr(ctx)}\n")
 
         # Quick human interpretation prompt
-        f.write("\n\nMANUAL LABEL (fill this in):\n")
-        f.write("  Base feature meaning:  ___________________\n")
-        f.write("  FT feature meaning:    ___________________\n")
+        f.write("\n\nMANUAL LABEL\n")
+        f.write("  Base feature meaning:\n")
+        f.write("  FT feature meaning:\n")
         f.write("  Unexpected drift?      YES / NO\n")
         f.write("  Notes: \n")
 
@@ -182,5 +182,3 @@ with open(summary_path, "w") as f:
             f.write(f"  FT   top-3: {[ctx for _, ctx in r['ft_top_activations'][:3]]}\n")
 
 print(f"\nSaved qualitative analysis to results/qualitative/")
-print(f"Open QUALITATIVE_SUMMARY.txt first — these are your report examples.")
-print("\nDone! You now have everything needed for the report.")

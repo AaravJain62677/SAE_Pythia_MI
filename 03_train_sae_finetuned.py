@@ -29,7 +29,6 @@ cfg = LanguageModelSAERunnerConfig(
     ),
 
     #  Fine-tuned model
-    # SAELens can load from a local HuggingFace-format directory
     model_name=FINETUNED_MODEL_PATH,
     hook_name="blocks.8.hook_resid_post",   
 

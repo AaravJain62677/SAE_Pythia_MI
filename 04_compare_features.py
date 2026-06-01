@@ -10,7 +10,7 @@ from tqdm import tqdm
 from transformers import AutoTokenizer
 from sae_lens import SAE
 
-# ── Paths ────────────────────────────────────────────────────────────────────
+#Paths 
 BASE_SAE_PATH      = "checkpoints/sae_base"
 FT_SAE_PATH        = "checkpoints/sae_finetuned"
 BASE_MODEL_NAME    = "EleutherAI/pythia-160m"
@@ -25,12 +25,9 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 # Thresholds
 STABLE_THRESH  = 0.9    # cosine sim > 0.9  → feature is stable
 DRIFTED_THRESH = 0.5    # 0.5 < sim < 0.9  → feature drifted
-# sim < 0.5             → feature is new/dead (no good match)
 
 # Load SAEs 
 print("Loading SAEs")
-# SAELens saves checkpoints as HuggingFace-format directories
-# Find the final checkpoint (highest step number)
 def find_latest_checkpoint(base_path):
     path = Path(base_path)
     checkpoints = sorted(path.glob("final_*"), key=lambda x: int(x.name.split("_")[1]) if "_" in x.name else 0)
@@ -48,23 +45,18 @@ print(f"  Finetuned SAE:  {ft_ckpt}")
 sae_base = SAE.load_from_pretrained(base_ckpt, device=device)
 sae_ft   = SAE.load_from_pretrained(ft_ckpt,   device=device)
 
-# Decoder weight matrices: shape (d_sae, d_model)
-# Each row is the direction for one feature
 W_dec_base = sae_base.W_dec.detach()   # (6144, 768)
 W_dec_ft   = sae_ft.W_dec.detach()     # (6144, 768)
 
 n_features = W_dec_base.shape[0]
 print(f"  Features per SAE: {n_features}")
 
-# Feature matching by cosine similarity
 print("\nComputing feature matching (cosine similarity)")
 
-# Normalize decoder directions to unit vectors
 W_base_norm = W_dec_base / (W_dec_base.norm(dim=1, keepdim=True) + 1e-8)
 W_ft_norm   = W_dec_ft   / (W_dec_ft.norm(dim=1, keepdim=True) + 1e-8)
 
-# Cosine similarity matrix: (n_base_features, n_ft_features)
-# Do in chunks to avoid OOM
+
 CHUNK = 512
 sim_matrix = torch.zeros(n_features, n_features, device="cpu")
 
@@ -72,11 +64,9 @@ for i in tqdm(range(0, n_features, CHUNK), desc="Sim matrix"):
     chunk = W_base_norm[i:i+CHUNK].to(device)
     sim_matrix[i:i+CHUNK] = (chunk @ W_ft_norm.T).cpu()
 
-# Greedy matching: for each base feature, find best-matching ft feature
-best_match_idx  = sim_matrix.argmax(dim=1)          # (n_features,)
-best_match_sim  = sim_matrix.max(dim=1).values      # (n_features,)
+best_match_idx  = sim_matrix.argmax(dim=1)          
+best_match_sim  = sim_matrix.max(dim=1).values    
 
-# Categorize features
 stable_mask  = best_match_sim >= STABLE_THRESH
 drifted_mask = (best_match_sim >= DRIFTED_THRESH) & (~stable_mask)
 dead_mask    = best_match_sim < DRIFTED_THRESH
@@ -90,8 +80,6 @@ print(f"  Stable   (sim ≥ 0.9): {n_stable:4d} / {n_features}  ({100*n_stable/n
 print(f"  Drifted  (0.5–0.9):   {n_drifted:4d} / {n_features}  ({100*n_drifted/n_features:.1f}%)")
 print(f"  New/Dead (sim < 0.5): {n_dead:4d} / {n_features}  ({100*n_dead/n_features:.1f}%)")
 
-#  Activation frequency analysis
-# We need to run both SAEs on a shared corpus to get activation frequencies.
 
 print("\nComputing activation frequencies on 500 sentences")
 
@@ -132,7 +120,7 @@ freq_ft   = get_activation_frequencies(model_ft,   sae_ft,   sample_texts)
 
 # Frequency shift per feature (matched pairs)
 freq_ft_matched = freq_ft[best_match_idx]
-freq_shift = freq_ft_matched - freq_base     # positive = fires more after FT
+freq_shift = freq_ft_matched - freq_base     
 
 # Build results dataframe
 print("\nBuilding results dataframe")
@@ -165,9 +153,7 @@ summary = {
     "mean_cosine_sim":  round(best_match_sim.mean().item(), 4),
     "median_cosine_sim": round(best_match_sim.median().item(), 4),
     "mean_freq_shift":  round(freq_shift.mean().item(), 6),
-    # Top 10 most frequency-increased features (likely code-related)
     "top_increased_features": df.nlargest(10, "freq_shift")["feature_id_base"].tolist(),
-    # Top 10 most frequency-decreased features (potentially unexpected drift)
     "top_decreased_features": df.nsmallest(10, "freq_shift")["feature_id_base"].tolist(),
 }
 
@@ -226,5 +212,5 @@ print(f"  Saved: results/figures/fig2_sim_vs_freq_shift.png")
 
 print("\nFeature comparison complete.")
 print("Next: run 05_qualitative_analysis.py to find top-activating sequences")
-print("\nKey numbers for your report:")
+print("\nAnalysis:")
 print(json.dumps(summary, indent=2))

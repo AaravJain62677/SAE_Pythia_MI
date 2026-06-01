@@ -14,19 +14,16 @@ if device == "cuda":
     print(f"VRAM: {torch.cuda.get_device_properties(0).total_memory / 1e9:.1f} GB")
 
 #Config 
-# Pythia-160M: d_model has 768, 12 layers
-# We hook at layer 8 (resid_post) to get upper-middle, rich semantic features
 
 D_MODEL = 768
-EXPANSION = 8          # 768 * 8 = 6144 SAE features
-L1_COEFF = 8           # sparsity penalty; target L0 of 20-50
+EXPANSION = 8          
+L1_COEFF = 8          
 
 cfg = LanguageModelSAERunnerConfig(
 
-    #  SAE architecture 
     sae=StandardTrainingSAEConfig(
         d_in=D_MODEL,
-        d_sae=D_MODEL * EXPANSION,          # 6144 features
+        d_sae=D_MODEL * EXPANSION,         
         l1_coefficient=L1_COEFF,
         apply_b_dec_to_input=True,
         normalize_activations="expected_average_only_in",
@@ -34,18 +31,17 @@ cfg = LanguageModelSAERunnerConfig(
 
     # Model
     model_name="EleutherAI/pythia-160m",
-    hook_name="blocks.8.hook_resid_post",   # residual stream after layer 8
+    hook_name="blocks.8.hook_resid_post",   
 
     # Dataset 
-    # General corpus so features represent general language
     dataset_path="Skylion007/openwebtext",
     is_dataset_tokenized=False,
     streaming=True,
 
 
-    training_tokens=5_000_000,             # 50M tokens
+    training_tokens=5_000_000,             
     train_batch_size_tokens=4096,
-    context_size=128,                       # sequence chunk length
+    context_size=128,                       
     n_batches_in_buffer=32,
     store_batch_size_prompts=16,
     lr=5e-5,
@@ -54,7 +50,7 @@ cfg = LanguageModelSAERunnerConfig(
 
     # Logging 
     logger=LoggingConfig(
-        log_to_wandb=False,                 # set True if you have wandb
+        log_to_wandb=False,                 
     ),
 
     #  Output 
