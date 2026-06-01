@@ -1,0 +1,50 @@
+# ── SAE Training Config ─────────────────────────────────────────────────────
+# Used by both Phase 1 (base model) and Phase 3 (fine-tuned model).
+# Keep identical for both runs so the only variable is the model weights.
+
+model:
+  name: "EleutherAI/pythia-160m"          # HuggingFace model ID
+  hook_layer: 8                            # residual stream after layer 8
+  hook_name: "blocks.8.hook_resid_post"   # TransformerLens hook point
+  d_model: 768                            # Pythia-160M residual stream dim
+
+sae:
+  architecture: "standard"                # standard L1 SAE (interpretable baseline)
+  expansion_factor: 8                     # d_sae = 768 * 8 = 6144 features
+  l1_coefficient: 8                       # sparsity penalty; tune if L0 > 60 or < 10
+  normalize_activations: "expected_average_only_in"
+
+training:
+  training_tokens: 50_000_000             # 50M tokens; enough for decent features
+  train_batch_size_tokens: 4096
+  context_size: 128                       # sequence length per chunk
+  n_batches_in_buffer: 32
+  store_batch_size_prompts: 16
+  lr: 5e-5
+  dtype: "float32"
+  seed: 42
+
+dataset:
+  path: "Skylion007/openwebtext"          # general corpus for both SAE runs
+  is_tokenized: false
+  streaming: true
+
+logging:
+  log_to_wandb: false                     # flip to true if you have wandb set up
+  wandb_project: "aims-sae-feature-drift"
+
+output:
+  base_checkpoint_path: "checkpoints/sae_base"
+  ft_checkpoint_path: "checkpoints/sae_finetuned"
+
+finetune:
+  dataset: "bigcode/the-stack"            # Python code corpus
+  dataset_subset: "data/python"
+  max_tokens: 50_000_000                  # ~50M tokens of Python code
+  lr: 1e-5
+  batch_size: 4
+  gradient_accumulation_steps: 8         # effective batch = 32; safe on 6GB VRAM
+  max_steps: 5000                        # ~1-2 epochs on subset
+  warmup_steps: 200
+  output_dir: "checkpoints/pythia_finetuned"
+  gradient_checkpointing: true           # critical for RTX 3050
