@@ -1,23 +1,3 @@
-"""
-02_finetune.py
-──────────────
-Phase 2: Fine-tune Pythia-160M on Python code from The Stack.
-
-Domain choice rationale (document in report):
-  Python code has maximally distinctive features — indentation semantics,
-  keyword structure, identifier patterns. This makes feature drift maximally
-  legible: code features appear, and any unexpected shifts in unrelated
-  features (discourse, sentiment, factual recall) are easy to isolate.
-
-Designed for RTX 3050 (6.4GB VRAM):
-  - gradient_checkpointing=True
-  - batch_size=4 + gradient_accumulation=8 → effective batch=32
-  - bf16 mixed precision
-
-Run:
-    python scripts/02_finetune.py
-"""
-
 import os
 import torch
 from transformers import (
@@ -29,19 +9,19 @@ from transformers import (
 )
 from datasets import load_dataset
 
-# ── Config ───────────────────────────────────────────────────────────────────
+# Config 
 MODEL_NAME = "EleutherAI/pythia-160m"
 OUTPUT_DIR = "checkpoints/pythia_finetuned"
-MAX_STEPS = 5000          # ~1-2 epochs on a 50M token subset; enough to shift representations
+MAX_STEPS = 1000          # ~1-2 epochs on a 50M token subset is enough to shift representations
 CONTEXT_LENGTH = 512
 BATCH_SIZE = 4
-GRAD_ACCUM = 8            # effective batch = 32
+GRAD_ACCUM = 8            # effective batch = 32(8*4)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Device: {device}")
 
-# ── Load tokenizer + model ───────────────────────────────────────────────────
-print(f"\nLoading {MODEL_NAME}...")
+# Load tokenizer + model
+print(f"\nLoading {MODEL_NAME}")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 tokenizer.pad_token = tokenizer.eos_token  # Pythia has no pad token by default
 
@@ -54,8 +34,8 @@ model.gradient_checkpointing_enable()   # saves ~30% VRAM
 
 print(f"Model params: {sum(p.numel() for p in model.parameters()) / 1e6:.1f}M")
 
-# ── Dataset: Python code from The Stack ─────────────────────────────────────
-print("\nLoading Python code dataset (streaming)...")
+# Dataset: Python code from The Stack
+print("\nLoad Python code dataset (streaming)")
 
 # The Stack is huge; we stream and take a subset
 raw_dataset = load_dataset(
@@ -76,13 +56,12 @@ def tokenize(example):
     )
 
 # Take first 100K examples from stream, tokenize
-print("Tokenizing 100K Python files...")
+print("Tokenizing 100K Python file")
 dataset = raw_dataset.take(100_000)
 dataset = dataset.map(tokenize, batched=True, batch_size=1000, remove_columns=["content", "size", "ext", "lang", "max_stars_repo_path", "max_stars_repo_name", "max_stars_count", "max_issues_repo_path", "max_issues_repo_name", "max_issues_count", "max_forks_repo_path", "max_forks_repo_name", "max_forks_count"])
 
 # Convert streaming dataset to regular for Trainer
-# (takes a few minutes but simplifies training)
-print("Collecting dataset into memory (this takes ~5 min)...")
+print("Collecting dataset into memory (this takes ~5 min)")
 dataset = dataset.take(50_000)          # 50K files × 512 tokens = 25.6M tokens
 dataset_list = list(dataset)
 
@@ -90,7 +69,7 @@ from datasets import Dataset
 train_dataset = Dataset.from_list(dataset_list)
 print(f"Dataset size: {len(train_dataset)} examples")
 
-# ── Training args ────────────────────────────────────────────────────────────
+# Training args
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     max_steps=MAX_STEPS,
@@ -108,7 +87,7 @@ training_args = TrainingArguments(
     seed=42,
 )
 
-# ── Trainer ──────────────────────────────────────────────────────────────────
+# Trainer
 data_collator = DataCollatorForLanguageModeling(
     tokenizer=tokenizer,
     mlm=False,                  # causal LM, not masked
@@ -121,8 +100,8 @@ trainer = Trainer(
     data_collator=data_collator,
 )
 
-# ── Train ────────────────────────────────────────────────────────────────────
-print(f"\n[Phase 2] Fine-tuning on Python code...")
+# Train
+print(f"\nFine-tuning on Python code")
 print(f"  Base model:  {MODEL_NAME}")
 print(f"  Dataset:     bigcode/the-stack (Python)")
 print(f"  Max steps:   {MAX_STEPS}")
@@ -130,9 +109,9 @@ print(f"  Output:      {OUTPUT_DIR}\n")
 
 trainer.train()
 
-# ── Save ─────────────────────────────────────────────────────────────────────
+# Save
 model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
 
-print(f"\n[Phase 2] Done. Fine-tuned model saved to {OUTPUT_DIR}/")
+print(f"\n Fine-tuned model saved to {OUTPUT_DIR}/")
 print("Next: run 03_train_sae_finetuned.py")

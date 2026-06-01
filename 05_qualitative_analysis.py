@@ -1,24 +1,3 @@
-"""
-05_qualitative_analysis.py
-──────────────────────────
-Find top-activating token sequences for features of interest.
-
-This gives you the qualitative examples for your report — the human-readable
-"what does this feature mean" evidence.
-
-Focus on:
-  1. Top 10 most frequency-INCREASED features (expected code features)
-  2. Top 10 most frequency-DECREASED features (unexpected drift candidates)
-  3. Top 10 most DRIFTED features (direction changed significantly)
-
-Output:
-  results/qualitative/feature_{id}_base.txt
-  results/qualitative/feature_{id}_finetuned.txt
-
-Run:
-    python scripts/05_qualitative_analysis.py
-"""
-
 import json
 import torch
 import numpy as np
@@ -29,7 +8,7 @@ from transformer_lens import HookedTransformer
 from sae_lens import SAE
 from datasets import load_dataset
 
-# ── Paths ────────────────────────────────────────────────────────────────────
+#  Paths
 BASE_MODEL   = "EleutherAI/pythia-160m"
 FT_MODEL     = "checkpoints/pythia_finetuned"
 RESULTS_DIR  = Path("results")
@@ -38,8 +17,8 @@ QUAL_DIR.mkdir(exist_ok=True)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# ── Load everything ───────────────────────────────────────────────────────────
-print("Loading models and SAEs...")
+#  Load everything
+print("Loading models and SAEs")
 
 def find_latest_checkpoint(base_path):
     path = Path(base_path)
@@ -56,7 +35,7 @@ df = pd.read_csv(RESULTS_DIR / "feature_comparison.csv")
 with open(RESULTS_DIR / "summary_stats.json") as f:
     summary = json.load(f)
 
-# ── Pick features to analyze ──────────────────────────────────────────────────
+# Pick features to analyze
 # Features where direction drifted most (low cosine sim)
 drifted_features = df[df["category"] == "drifted"].nsmallest(15, "cosine_sim")["feature_id_base"].tolist()
 # Features with biggest frequency increase (likely code-related — expected)
@@ -67,8 +46,8 @@ decreased_features = df.nsmallest(10, "freq_shift")["feature_id_base"].tolist()
 features_to_analyze = list(set(drifted_features + increased_features[:5] + decreased_features[:5]))
 print(f"Analyzing {len(features_to_analyze)} features of interest")
 
-# ── Sample corpus for finding top activations ─────────────────────────────────
-print("Loading sample texts...")
+#  Sample corpus for finding top activations 
+print("Loading sample texts")
 raw = load_dataset("Skylion007/openwebtext", split="train", streaming=True)
 sample_texts = [x["text"] for x in raw.take(2000)]
 
@@ -78,7 +57,7 @@ code_samples = [x["content"][:300] for x in code_raw.take(200)]
 
 all_texts = sample_texts + code_samples
 
-# ── Function: find top-activating windows for a feature ─────────────────────
+# Function: find top-activating windows for a feature 
 def get_top_activating_sequences(model, sae, feature_idx, texts, top_k=10, window=10):
     """
     Find the top-k token windows where a specific SAE feature activates most strongly.
@@ -113,8 +92,8 @@ def get_top_activating_sequences(model, sae, feature_idx, texts, top_k=10, windo
     all_activations.sort(key=lambda x: x[0], reverse=True)
     return all_activations[:top_k]
 
-# ── Analyze each feature ──────────────────────────────────────────────────────
-print("\nFinding top-activating sequences (this takes ~20 min)...")
+#  Analyze each feature 
+print("\nFinding top-activating sequences")
 
 results = {}
 
@@ -164,8 +143,8 @@ for feat_id in tqdm(features_to_analyze, desc="Analyzing features"):
         f.write("  Unexpected drift?      YES / NO\n")
         f.write("  Notes: \n")
 
-# ── Generate report-ready summary ─────────────────────────────────────────────
-print("\nGenerating qualitative summary for report...")
+# Generate report-ready summary 
+print("\nGenerating qualitative summary for report")
 
 summary_path = QUAL_DIR / "QUALITATIVE_SUMMARY.txt"
 with open(summary_path, "w") as f:
