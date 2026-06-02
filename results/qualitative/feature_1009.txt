@@ -1,0 +1,37 @@
+Feature 1009 (Base) → Feature 2714 (FT)
+Cosine similarity: 0.5461  |  Category: drifted  |  Freq shift: +0.0183
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.393] '. 27, 2017. (Photo11: Rog'
+[0.386] ' earlier in the day. (Published Tuesday, Oct'
+[0.385] '. Louis on Saturday. (Melina Mara'
+[0.380] 'icksburg, Va. (Photo: Courtesy'
+[0.377] ' relief for property taxpayers. (AP)\n\n'
+[0.373] ' as well as rewards. (AP Photo/Steven'
+[0.372] ' center with female students. (Photo: Warrant'
+[0.345] ' May 5, 2011 picture.'
+[0.343] ' officials and foreign leaders. (Carolyn Kaster'
+[0.343] ' Wednesday, July 20. (The Washington Post)'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[1.890] '. Louis on Saturday. (Melina Mara'
+[1.821] ' earlier in the day. (Published Tuesday, Oct'
+[1.799] 'icksburg, Va. (Photo: Courtesy'
+[1.781] '. 27, 2017. (Photo11: Rog'
+[1.766] ' relief for property taxpayers. (AP)\n\n'
+[1.758] 'burg, Va. (Photo: Courtesy photo'
+[1.736] ' as well as rewards. (AP Photo/Steven'
+[1.708] ' Eiffel tower. (JACQUES'
+[1.697] ' 27, 2017. (Photo11: Rogel'
+[1.697] ' and Ferguson, Mo. (Photo by Tasos'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

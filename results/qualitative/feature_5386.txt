@@ -1,0 +1,37 @@
+Feature 5386 (Base) → Feature 3202 (FT)
+Cosine similarity: 0.5270  |  Category: drifted  |  Freq shift: +0.0203
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.060] 'org Date: 2016-05-12 13:'
+[0.060] ' Behavior\n\npublished at 01.11.2014'
+[0.044] "f'Your meal plan for the week: {"
+[0.040] '-9.-]+\\.[A-Z|'
+[0.038] ' next year\n\nPublished 1:35 PM,'
+[0.033] 'ABiter » Mon Mar 02, 2015 6:'
+[0.032] ' -l ; echo "0 0 * * *'
+[0.032] '._%+-]+@[A-Za-'
+[0.031] "all(r'\\b[A-Za-"
+[0.030] "('How many minutes between each break? '))"
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.390] '2nd Place: Zefra Dinosaur'
+[4.299] 'MEP 0.3.1b\n\n'
+[4.099] ' mockery since the beginning of our c'
+[3.939] 'osterm. Aglaia domestica ('
+[3.926] ' GHC via Phabricator” at the'
+[3.897] ' mapping. The Galaxy R8700 is the ideal'
+[3.848] ' Elísio Summavielle, relemb'
+[3.839] ' stability, the Galaxy R8700 makes quick work'
+[3.816] '-Redemption-Step-1-Version-'
+[3.779] ' [1, 2], [2, 2],'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

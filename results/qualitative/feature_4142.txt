@@ -1,0 +1,37 @@
+Feature 4142 (Base) → Feature 3839 (FT)
+Cosine similarity: 0.5161  |  Category: drifted  |  Freq shift: +0.0187
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.019] '    if cpu_temp > threshold or gpu'
+[0.019] ' our latest issue\n\nSubscribe '
+[0.019] ' our latest issue\n\nSubscribe '
+[0.019] ' our latest issue\n\nSubscribe '
+[0.019] ' our latest issue\n\nSubscribe '
+[0.018] "\n\nArizona running back Ka'Deem"
+[0.014] ' season, Detroit Lions running back Tion Green could'
+[0.011] ' he started falling. He hit the ceiling half a'
+[0.007] " it's a gem.\n\nFirst, V"
+[0.006] ' kullanılabilir. Öz'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.195] ' Heinly of Foothill Ranch.\n\n'
+[3.986] "):\n    with TCPServer(('', port"
+[3.941] ' all of your old Company of Heroes favourites!'
+[3.787] ' from India.The VR World Congress, to be'
+[3.763] 'ardiani Valvole-CSF'
+[3.760] ' the Party for Socialism and Liberation (PSL'
+[3.622] ' and that means Flipper Bowl III is a'
+[3.537] 'asusrog — ASUS ROG Tournaments (@'
+[3.523] ' on his shoulders as the new franchise player that will'
+[3.404] 'Congress Vice-President Rahul Gandhi began his speech'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

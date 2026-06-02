@@ -1,0 +1,37 @@
+Feature 1702 (Base) → Feature 1964 (FT)
+Cosine similarity: 0.9669  |  Category: stable  |  Freq shift: +0.3044
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[1.869] '<|endoftext|>Jones\n\nvs'
+[1.869] '<|endoftext|>BIGBANG'
+[1.869] '<|endoftext|>WHAT?!??!'
+[1.869] '<|endoftext|>We’ve always'
+[1.869] '<|endoftext|>There’s measuring'
+[1.869] '<|endoftext|>Get cool in-'
+[1.869] '<|endoftext|>MOSCOW'
+[1.869] '<|endoftext|>About This Game Casino'
+[1.869] '<|endoftext|>The Ice Light is'
+[1.869] '<|endoftext|>New York Red Bulls'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[2.030] '<|endoftext|>BREAKING: Donald Trump'
+[1.967] '<|endoftext|>By Riot J'
+[1.967] '<|endoftext|>Caution: JavaScript'
+[1.967] '<|endoftext|>{"smallUrl":"'
+[1.967] '<|endoftext|>CC Saad Ak'
+[1.967] '<|endoftext|>3rd R Davis'
+[1.967] '<|endoftext|>RE: Host for'
+[1.967] '<|endoftext|>06.07.'
+[1.967] '<|endoftext|>window._tabool'
+[1.967] '<|endoftext|>"Duku"'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

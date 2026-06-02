@@ -1,0 +1,37 @@
+Feature 777 (Base) → Feature 582 (FT)
+Cosine similarity: 0.5371  |  Category: drifted  |  Freq shift: +0.0252
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.451] ' never identified himself\n\nBilled as “the'
+[0.434] ' was 72.\n\nBaker, a broadcast'
+[0.416] '!!!! #JamaicaBobsled pic.'
+[0.405] ' a new BFF on Bumble and found something'
+[0.393] ' Dhaka.\n\nBangladeshi'
+[0.361] ' Bicycles\n\nBicycles are quick'
+[0.357] ' new report.\n\nBannon confronted members of'
+[0.356] ' William & Mary4. Binghamton\n\n'
+[0.355] ' new job.\n\nBumble has just launched'
+[0.354] " 2.4, 'bike': 0."
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.924] 'asusrog — ASUS ROG Tournaments (@'
+[3.769] 'Servicios de La Raza provides support services'
+[3.732] ' John Morgan\n\n@MMAjunkie'
+[3.725] "):\n    with TCPServer(('', port"
+[3.697] 'Congress Vice-President Rahul Gandhi began his speech'
+[3.674] ' through the debris of a deadly mudslide in O'
+[3.673] ' Heinly of Foothill Ranch.\n\n'
+[3.653] 'ardiani Valvole-CSF'
+[3.624] 'icana, but can its charm survive? An'
+[3.622] ' December 2012\n\nRAWTunes.exe 10'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

@@ -1,0 +1,37 @@
+Feature 2849 (Base) → Feature 3202 (FT)
+Cosine similarity: 0.5063  |  Category: drifted  |  Freq shift: +0.0204
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.023] ' company would have to “say goodbye to some talented'
+[0.011] ' saw soprano Mary Bevan and members of'
+[0.007] 'at in een andere lidstaat, waarb'
+[0.006] ' stormed early morning 20 March.\n\n2'
+[0.005] ' But video evidence and 911 audio showed no such thing'
+[0.004] ' our Privacy Policy here. Sign up for Take Action'
+[0.004] ' our Privacy Policy here. Sign up for Take Action'
+[0.004] ' our Privacy Policy here. Sign up for Take Action'
+[0.004] ' our Privacy Policy here. Sign up for Take Action'
+[0.002] ' medical tent, where his condition quickly deteriorated and he'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.390] '2nd Place: Zefra Dinosaur'
+[4.299] 'MEP 0.3.1b\n\n'
+[4.099] ' mockery since the beginning of our c'
+[3.939] 'osterm. Aglaia domestica ('
+[3.926] ' GHC via Phabricator” at the'
+[3.897] ' mapping. The Galaxy R8700 is the ideal'
+[3.848] ' Elísio Summavielle, relemb'
+[3.839] ' stability, the Galaxy R8700 makes quick work'
+[3.816] '-Redemption-Step-1-Version-'
+[3.779] ' [1, 2], [2, 2],'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

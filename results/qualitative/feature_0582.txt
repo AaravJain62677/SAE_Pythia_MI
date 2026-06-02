@@ -1,0 +1,37 @@
+Feature 582 (Base) → Feature 1089 (FT)
+Cosine similarity: 0.1927  |  Category: new_dead  |  Freq shift: +0.3298
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.029] ' several regions surrounding Nagorno-Karabakh to'
+[0.028] 'Five different Islanders scored go'
+[0.026] ' bargaining chip for Gilad Shalit’s'
+[0.025] " {decompressed}')\n```"
+[0.023] "message': response_data})\nif __name"
+[0.023] '\nmerger.close()\n```'
+[0.022] "ensive Player of the Year Ka'Deem Carey"
+[0.014] ' on to top the Under-18 scoring charts in'
+[0.014] ' July 25, 2017, a day afte'
+[0.012] "M') == run_time:\n        os"
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[5.432] '% wrong in their view of government and society.'
+[5.347] ' increased distrust in minority communities; '
+[5.095] ' foreign tourists’ cash. But last week’s'
+[5.021] ' Z2, delves into the powerful ideology that'
+[5.006] ' that step requires a dive into the confusing field of'
+[4.950] ' innermost desires. I want to achi'
+[4.926] ' into microservices. They examine various approaches for creating'
+[4.829] 'This dedicated release in turn fueled rumors, claiming '
+[4.812] ' entirely justified.\n\nBut despite losing first Johnny'
+[4.812] ' bureaucrats are wading into people’s affairs'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

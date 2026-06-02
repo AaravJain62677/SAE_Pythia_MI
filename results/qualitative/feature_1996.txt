@@ -1,0 +1,33 @@
+Feature 1996 (Base) → Feature 3262 (FT)
+Cosine similarity: 0.5058  |  Category: drifted  |  Freq shift: +0.0102
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.069] 'rsatz gefunden zu haben für den Publik'
+[0.021] 'intergrund geführt. Dort tra'
+[0.017] 'ings Ersatz gefunden zu haben für den'
+[0.014] ' (@MEAIndia) June 9, 2016\n'
+[0.003] ' ansonsten sehr mäßigen Schalk'
+[0.002] " had broken the law when he released an individual's"
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.273] 'Servicios de La Raza provides support services'
+[3.272] '2nd Place: Zefra Dinosaur'
+[3.214] 'MEP 0.3.1b\n\n'
+[3.200] ', DaceyA@dnc.org CC'
+[3.105] "):\n    with TCPServer(('', port"
+[3.084] ' Heinly of Foothill Ranch.\n\n'
+[3.025] ' GHC via Phabricator” at the'
+[2.937] ' Elísio Summavielle, relemb'
+[2.909] ' the product address of CodeRage, you now'
+[2.894] 'ardt\n\nHoriguchi\n\nL'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

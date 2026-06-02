@@ -3,7 +3,6 @@ venv/
 __pycache__/
 *.pyc
 checkpoints/
-results/
 *.pt
 *.safetensors
 .env

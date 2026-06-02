@@ -1,0 +1,37 @@
+Feature 5432 (Base) → Feature 4979 (FT)
+Cosine similarity: 0.1896  |  Category: new_dead  |  Freq shift: +0.2977
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.055] ' original editorial content of Sneaker News.\n'
+[0.045] 'Soup\nimport pandas as pd\nresponse ='
+[0.041] ' 4 exercises for biceps and 4 exercises for tr'
+[0.040] ' in Chicago. He and another panhandler brought a'
+[0.039] ' It is the application framework behind Apple’s impressive'
+[0.029] '_code == 200\n    except requests.Request'
+[0.024] "}])\ndataset.to_csv('sc"
+[0.021] ' through\n\nPractice makes perfect, so you'
+[0.020] ' they could and couldn’t do with it.'
+[0.017] 'alandhar, while one has been deployed in T'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[5.599] ' has been unfriendly towards bitcoins, it'
+[5.371] 'ing duty (ADD) on imported solar panels in'
+[5.336] ', and take direct aim at Air Canada and West'
+[5.272] ', including an extended presence in lo'
+[5.272] '\nRussia’s stance towards bitcoin and blockchain is'
+[5.239] ' antitrust cases, including one involving Google.\n\n'
+[5.140] ' the jihadists’ positions in northeast Lebanon, a'
+[5.123] ') continued their successful operation on the eastern bank of'
+[5.105] ' an inquiry after a boat carrying migrants capsized while'
+[5.105] " the world's biggest buyer of liquefied natural"
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

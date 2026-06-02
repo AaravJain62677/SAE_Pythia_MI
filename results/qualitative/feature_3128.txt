@@ -1,0 +1,37 @@
+Feature 3128 (Base) → Feature 655 (FT)
+Cosine similarity: 0.5220  |  Category: drifted  |  Freq shift: +0.0237
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.035] '. market in 1986, died Thursday after a battle'
+[0.022] ' death penalty\n\nSen. Russ Feingold'
+[0.018] 'rowing up in a Recession: Beliefs'
+[0.007] ' Post in Moscow, Russia, May 24, 2017'
+[0.006] "ps his mother's hand, December 24, 2015"
+[0.006] ' next season\n\nArsène Wenger is'
+[0.004] ' walked by, looking him straight in the eye.'
+[0.004] ' einer ansonsten sehr mäßigen Sch'
+[0.004] ' Will Start the World’s Biggest Carbon Market'
+[0.003] 'It’s quite the barber’s trick'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[2.776] ' a foreign child who has been adopted or legally placed'
+[2.769] ' from India.The VR World Congress, to be'
+[2.717] ' 12125\n\nCogmind\n\n---------'
+[2.597] "):\n    with TCPServer(('', port"
+[2.550] ' on his shoulders as the new franchise player that will'
+[2.486] ' Heinly of Foothill Ranch.\n\n'
+[2.457] 'ah Binti Shamsuddin, Sy'
+[2.450] 'Servicios de La Raza provides support services'
+[2.440] 'MEP 0.3.1b\n\n'
+[2.436] 'Congress Vice-President Rahul Gandhi began his speech'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

@@ -1,0 +1,32 @@
+Feature 1152 (Base) → Feature 6090 (FT)
+Cosine similarity: 0.5379  |  Category: drifted  |  Freq shift: +0.0118
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.026] 'The flagship Core i7-7700K CPU'
+[0.025] 'MEP 0.3.1b\n\n'
+[0.013] ' Bain Capital made Sensata staff take down'
+[0.009] 'akia (1945-1992) Denmark East Germany ('
+[0.007] ' region\n\nİZMİR'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[2.724] ' Heinly of Foothill Ranch.\n\n'
+[2.591] "):\n    with TCPServer(('', port"
+[2.574] 'Servicios de La Raza provides support services'
+[2.540] ', DaceyA@dnc.org CC'
+[2.477] ' December 2012\n\nRAWTunes.exe 10'
+[2.444] ' GHC via Phabricator” at the'
+[2.437] ' 12125\n\nCogmind\n\n---------'
+[2.422] '2nd Place: Zefra Dinosaur'
+[2.374] ' the product address of CodeRage, you now'
+[2.351] ' orders to kill Altantuya Shaariib'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

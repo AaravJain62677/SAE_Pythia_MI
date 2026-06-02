@@ -1,0 +1,37 @@
+Feature 2669 (Base) → Feature 5598 (FT)
+Cosine similarity: 0.5508  |  Category: drifted  |  Freq shift: +0.0296
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[1.447] 'ama said he was “disappointed” at Serbian'
+[1.423] ' watching …"\n\nDiscreet, it'
+[1.385] ' minor office but has been disqualified because he can'
+[1.357] ' the Scientific Revolution began to disprove past ideals and'
+[1.356] ' says he’s “disgusted” by'
+[1.350] 'te has described as ‘disgusting’'
+[1.345] 'offs at GQ (disclosure: I used'
+[1.338] ' the Sanders campaign—was disinvited from introducing'
+[1.316] ' around the office turned out dismal results, however'
+[1.310] 'yl Sandberg is "disgusted and disappointed'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[2.113] 'acle that had many baseball insiders talking about the'
+[2.107] ' approach’ is not ‘conducive’ to'
+[2.089] ' you of "racial insensit'
+[2.072] ', that the deranged incursion of Trump'
+[2.068] ' nuclear weapons capabilities. The incendiary rhetoric from'
+[1.973] ' agency warned of a “concrete” plan to'
+[1.962] 'ie Moss was found dead ins'
+[1.944] ' would be "no conceivable imp'
+[1.937] "nacular. It's expresse"
+[1.917] ' of its food supply is impo'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

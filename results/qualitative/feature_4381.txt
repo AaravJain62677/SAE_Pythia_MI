@@ -1,0 +1,37 @@
+Feature 4381 (Base) → Feature 844 (FT)
+Cosine similarity: 0.5159  |  Category: drifted  |  Freq shift: +0.0138
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.034] 'flow.keras.layers import Dense,'
+[0.029] "', 'I am fine')]\nchatbot"
+[0.018] ',000 euros (about $780,000).'
+[0.016] "ppy-than-usual' dept\n\n"
+[0.013] ',-make-more-money-dimwits'
+[0.011] 'IA, S.C. — Jon Hunts'
+[0.011] ' exam question on an uncomfortable area of the body that'
+[0.009] 'join(folder, f))) for f in os'
+[0.008] '\nimport requests\nfrom bs4 import BeautifulS'
+[0.008] '\nimport requests\nfrom bs4 import BeautifulS'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.872] 'MEP 0.3.1b\n\n'
+[3.748] ' 12125\n\nCogmind\n\n---------'
+[3.680] ' GHC via Phabricator” at the'
+[3.666] ' mockery since the beginning of our c'
+[3.642] "):\n    with TCPServer(('', port"
+[3.565] ' from India.The VR World Congress, to be'
+[3.562] ' a foreign child who has been adopted or legally placed'
+[3.405] ' orders to kill Altantuya Shaariib'
+[3.404] 'Servicios de La Raza provides support services'
+[3.316] '2nd Place: Zefra Dinosaur'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

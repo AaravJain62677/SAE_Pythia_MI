@@ -1,0 +1,32 @@
+Feature 5324 (Base) → Feature 5994 (FT)
+Cosine similarity: 0.5048  |  Category: drifted  |  Freq shift: +0.0195
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.036] '\n    water_intake += int(int'
+[0.027] ' jetzt geht’s um die Abl'
+[0.015] ' Ersatz gefunden zu haben für den Pub'
+[0.008] 'conn.commit()\nconn.close()\n'
+[0.002] ".system('reboot')\n```"
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.965] ' from India.The VR World Congress, to be'
+[4.709] ' all of your old Company of Heroes favourites!'
+[4.642] ' Heinly of Foothill Ranch.\n\n'
+[4.582] "):\n    with TCPServer(('', port"
+[4.385] ' the Party for Socialism and Liberation (PSL'
+[4.342] 'Congress Vice-President Rahul Gandhi began his speech'
+[4.258] 'ardiani Valvole-CSF'
+[4.183] ' on his shoulders as the new franchise player that will'
+[4.146] ' and that means Flipper Bowl III is a'
+[4.100] 'J, see Breezeblocks (song)'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

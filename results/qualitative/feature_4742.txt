@@ -1,0 +1,37 @@
+Feature 4742 (Base) → Feature 3663 (FT)
+Cosine similarity: 0.9636  |  Category: stable  |  Freq shift: -0.2170
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[2.739] ' (or nightmarish?) compositions. Each mixed'
+[2.720] '\n\nIt turns out his magnum opus'
+[2.620] ' first completely soft, autonomous, and untethered'
+[2.580] ' a line that mixes up the formula'
+[2.517] " object creation time @field 'created_at',"
+[2.516] ' realities of war\n\nHis diary entries, never'
+[2.516] ' record passenger traffic to Bush, Hobby 1 /'
+[2.505] ' relevant to early debates about the dietary causes of CH'
+[2.504] 'ately high levels, and my ability to complete projects'
+[2.497] ' concept Artist residency programs and the art of making art'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.810] ', and being blind to the fact that one’'
+[3.618] ' I will actually vote however my wife tells me to'
+[3.563] ' the fact that one’s long-term personal'
+[3.561] '. I start to question my transition as a whole'
+[3.488] ' page did not fully convey the dynamic,'
+[3.484] '\n\n"It eliminates the pressure on the guest'
+[3.456] ' withdrawal, can we discuss the framework for our future'
+[3.454] 'aught of cities to emphasize the series’ blockb'
+[3.434] ' the Danes fully understand the consequences of what will'
+[3.397] ' each one of them offers some sort of long-'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

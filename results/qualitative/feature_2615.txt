@@ -1,0 +1,37 @@
+Feature 2615 (Base) → Feature 89 (FT)
+Cosine similarity: 0.5789  |  Category: drifted  |  Freq shift: +0.0934
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[1.948] ' humour. The most surprising result is that subjects who'
+[1.881] ', but the most obvious one is that I was'
+[1.879] '\n\nThe more pertinent question is, since when'
+[1.859] '\nThe fact of the matter is that Costa Rica'
+[1.839] ' culturally incarnate. The hope of Zion is realized'
+[1.837] ' Care Act? The final answer to t'
+[1.759] '\n\nThe main selling point of this semi-'
+[1.749] ' 2018.\n\nThe hope is that the software'
+[1.714] 'called common ground. The assumption is that we can'
+[1.712] ' level. The most important change by far is the'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[5.330] 'called common ground. The assumption is that we can'
+[5.034] '.\n\n“The advantage here is low energy'
+[4.970] ' a significant advance over the limitations of previous techniques.'
+[4.863] 'Paul Biggar: The idea of having something that'
+[4.762] ' Convention.\n\nThe pattern will likely spell doom'
+[4.731] '\n\nThe main selling point of this semi-'
+[4.689] '\n\nThe various justifications put forth to support'
+[4.624] ' 2018.\n\nThe hope is that the software'
+[4.624] ' serious problem. The biggest issue with time zones is'
+[4.562] ' and 1673. The idea was to help populate'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

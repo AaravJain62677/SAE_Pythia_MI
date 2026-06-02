@@ -1,0 +1,37 @@
+Feature 6036 (Base) → Feature 2376 (FT)
+Cosine similarity: 0.1639  |  Category: new_dead  |  Freq shift: +0.2618
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.032] ' of the website. There may be some problems with'
+[0.017] ' titled "You\'re Not Pretty Enough: You'
+[0.015] ' problems with news display in specific browser versions.\n'
+[0.013] ' and Servicios de La Raza started the'
+[0.011] ' untrustworthy, or illegal in your jurisdiction.'
+[0.009] '\nPHOENIX (AP) — Bruce'
+[0.006] ' the website. There may be some problems with news'
+[0.005] 'org, CoxC@dnc.org Date'
+[0.005] ', Md., July 23 (UPI) --'
+[0.004] ' to his front wheel being caught in train tracks,'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.098] ', and being blind to the fact that one’'
+[4.077] ' need to be sensitive to the tens of thousands of'
+[4.073] ' you cannot take pleasure in the idea of human potential'
+[4.071] 'aught of cities to emphasize the series’ blockb'
+[4.062] ' the Danes fully understand the consequences of what will'
+[4.043] ' page did not fully convey the dynamic,'
+[4.010] ' as well as to examine the “complex set of'
+[4.003] ' deputy leader who can unite the party. Someone who'
+[3.992] ' continually check our understanding of the t'
+[3.987] ' withdrawal, can we discuss the framework for our future'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

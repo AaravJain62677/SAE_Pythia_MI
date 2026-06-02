@@ -1,0 +1,37 @@
+Feature 2240 (Base) → Feature 5183 (FT)
+Cosine similarity: 0.8668  |  Category: drifted  |  Freq shift: -0.2238
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[2.745] ' is largely hidden from the general public. The combat'
+[2.743] ',000 unaccompanied minors from Guatemala,'
+[2.669] ' Japan have not risen in past decades, as they'
+[2.652] ' good economic growth with zero net illegal emigration and'
+[2.650] ' presidential candidate Barack Obama, federal authorities said Monday.'
+[2.643] ' California region. In the last three years we have'
+[2.619] 'realization? During a recent visit to South Africa'
+[2.602] ' Shadowlands server. Our sincere thanks to them both'
+[2.589] ' with higher inflation for a limited period of time,'
+[2.586] 'For the first time in my life, I have'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.957] 'For the first time in my life, I have'
+[4.381] ' of super will triple in the next 20 years,"'
+[4.339] ' California region. In the last three years we have'
+[4.186] ' city. In the next few weeks a dialysis center'
+[4.185] ' Japan have not risen in past decades, as they'
+[4.029] 'plus will double in the next 25 years, the'
+[4.024] ' as they have elsewhere in the developed world. A'
+[4.020] ' wish him the best in the future.”\n\n'
+[3.975] '.\n\nIn their own ways, Hillary Rod'
+[3.963] '.\n\n“In our opinion, the executive'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

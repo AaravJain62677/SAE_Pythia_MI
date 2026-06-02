@@ -1,0 +1,32 @@
+Feature 218 (Base) → Feature 5093 (FT)
+Cosine similarity: 0.5487  |  Category: drifted  |  Freq shift: +0.0265
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.009] '\nfor i, article in enumerate(gaming'
+[0.008] 'ans’ Gabbard hits back at Meghan'
+[0.003] ' of the vote: Total Number Voting....................'
+[0.000] '\nBy Football Italia staff\n\nGian'
+[0.000] ' or more of our advertisers. We may receive compensation'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.047] 'John\n\n2015 picks: 0-0\n'
+[2.844] ' Cleveland on his shoulders as the new franchise player that'
+[2.775] '%). This follows three years of nearly no growth ('
+[2.750] ' We knew he liked Instagram. We knew he liked'
+[2.490] "txt')\n    else:\n        os."
+[2.454] ' N Aoki to second. 1 2\n\n'
+[2.453] ')\n\n11:34:30 Rt'
+[2.430] '00\n\n00:00:00\n\n'
+[2.394] "except UnboundLocalError:\n        print('"
+[2.333] " code.')\nelse:\n    print('"
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

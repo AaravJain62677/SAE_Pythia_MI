@@ -1,0 +1,85 @@
+QUALITATIVE FEATURE ANALYSIS SUMMARY
+======================================================================
+
+MOST DRIFTED FEATURES (low cosine similarity — direction changed):
+------------------------------------------------------------
+
+Feature 5324 | sim=0.505 | freq_shift=+0.0195
+  BASE top-3: ['\n    water_intake += int(int', ' jetzt geht’s um die Abl', ' Ersatz gefunden zu haben für den Pub']
+  FT   top-3: [' from India.The VR World Congress, to be', ' all of your old Company of Heroes favourites!', ' Heinly of Foothill Ranch.\n\n']
+
+Feature 1996 | sim=0.506 | freq_shift=+0.0102
+  BASE top-3: ['rsatz gefunden zu haben für den Publik', 'intergrund geführt. Dort tra', 'ings Ersatz gefunden zu haben für den']
+  FT   top-3: ['Servicios de La Raza provides support services', '2nd Place: Zefra Dinosaur', 'MEP 0.3.1b\n\n']
+
+Feature 2849 | sim=0.506 | freq_shift=+0.0204
+  BASE top-3: [' company would have to “say goodbye to some talented', ' saw soprano Mary Bevan and members of', 'at in een andere lidstaat, waarb']
+  FT   top-3: ['2nd Place: Zefra Dinosaur', 'MEP 0.3.1b\n\n', ' mockery since the beginning of our c']
+
+Feature 4381 | sim=0.516 | freq_shift=+0.0138
+  BASE top-3: ['flow.keras.layers import Dense,', "', 'I am fine')]\nchatbot", ',000 euros (about $780,000).']
+  FT   top-3: ['MEP 0.3.1b\n\n', ' 12125\n\nCogmind\n\n---------', ' GHC via Phabricator” at the']
+
+Feature 4142 | sim=0.516 | freq_shift=+0.0187
+  BASE top-3: ['    if cpu_temp > threshold or gpu', ' our latest issue\n\nSubscribe ', ' our latest issue\n\nSubscribe ']
+  FT   top-3: [' Heinly of Foothill Ranch.\n\n', "):\n    with TCPServer(('', port", ' all of your old Company of Heroes favourites!']
+
+Feature 3128 | sim=0.522 | freq_shift=+0.0237
+  BASE top-3: ['. market in 1986, died Thursday after a battle', ' death penalty\n\nSen. Russ Feingold', 'rowing up in a Recession: Beliefs']
+  FT   top-3: [' a foreign child who has been adopted or legally placed', ' from India.The VR World Congress, to be', ' 12125\n\nCogmind\n\n---------']
+
+Feature 5386 | sim=0.527 | freq_shift=+0.0203
+  BASE top-3: ['org Date: 2016-05-12 13:', ' Behavior\n\npublished at 01.11.2014', "f'Your meal plan for the week: {"]
+  FT   top-3: ['2nd Place: Zefra Dinosaur', 'MEP 0.3.1b\n\n', ' mockery since the beginning of our c']
+
+Feature  777 | sim=0.537 | freq_shift=+0.0252
+  BASE top-3: [' never identified himself\n\nBilled as “the', ' was 72.\n\nBaker, a broadcast', '!!!! #JamaicaBobsled pic.']
+  FT   top-3: ['asusrog — ASUS ROG Tournaments (@', 'Servicios de La Raza provides support services', ' John Morgan\n\n@MMAjunkie']
+
+
+MOST INCREASED ACTIVATION (likely code features — expected drift):
+------------------------------------------------------------
+
+Feature  582 | sim=0.193 | freq_shift=+0.3298
+  BASE top-3: [' several regions surrounding Nagorno-Karabakh to', 'Five different Islanders scored go', ' bargaining chip for Gilad Shalit’s']
+  FT   top-3: ['% wrong in their view of government and society.', ' increased distrust in minority communities; ', ' foreign tourists’ cash. But last week’s']
+
+Feature 1702 | sim=0.967 | freq_shift=+0.3044
+  BASE top-3: ['<|endoftext|>Jones\n\nvs', '<|endoftext|>BIGBANG', '<|endoftext|>WHAT?!??!']
+  FT   top-3: ['<|endoftext|>BREAKING: Donald Trump', '<|endoftext|>By Riot J', '<|endoftext|>Caution: JavaScript']
+
+Feature 5432 | sim=0.190 | freq_shift=+0.2977
+  BASE top-3: [' original editorial content of Sneaker News.\n', 'Soup\nimport pandas as pd\nresponse =', ' 4 exercises for biceps and 4 exercises for tr']
+  FT   top-3: [' has been unfriendly towards bitcoins, it', 'ing duty (ADD) on imported solar panels in', ', and take direct aim at Air Canada and West']
+
+Feature 6036 | sim=0.164 | freq_shift=+0.2618
+  BASE top-3: [' of the website. There may be some problems with', ' titled "You\'re Not Pretty Enough: You', ' problems with news display in specific browser versions.\n']
+  FT   top-3: [', and being blind to the fact that one’', ' need to be sensitive to the tens of thousands of', ' you cannot take pleasure in the idea of human potential']
+
+Feature 3493 | sim=0.991 | freq_shift=+0.2614
+  BASE top-3: [' Javascript to watch this video\n\nThe mother of', '<|endoftext|>Hello all,\n\nIn this newsletter', '<|endoftext|>Image copyright Getty Images\n\nA new study']
+  FT   top-3: ['<|endoftext|>06.07.2017\n', '<|endoftext|>T.J. Rivera’', '<|endoftext|>8.1K Shares']
+
+
+MOST DECREASED ACTIVATION (unexpected drift candidates):
+------------------------------------------------------------
+
+Feature 5535 | sim=0.935 | freq_shift=-0.2276
+  BASE top-3: [' your surroundings. Find allies and accomplices.\n', ' see, but collect yourself and take note of your', ' it would give me inspiration and hope,” Ferrign']
+  FT   top-3: [' can rise above the divisions and bring us', ' for creating microservice boundaries and dispel the myth', ' “complex set of issues and propose solutions.” The']
+
+Feature 2240 | sim=0.867 | freq_shift=-0.2238
+  BASE top-3: [' is largely hidden from the general public. The combat', ',000 unaccompanied minors from Guatemala,', ' Japan have not risen in past decades, as they']
+  FT   top-3: ['For the first time in my life, I have', ' of super will triple in the next 20 years,"', ' California region. In the last three years we have']
+
+Feature  248 | sim=0.974 | freq_shift=-0.2204
+  BASE top-3: ['% wrong in their view of government and society.', ' that step requires a dive into the confusing field of', ' foreign tourists’ cash. But last week’s']
+  FT   top-3: [' bureaucrats are wading into people’s affairs', "-day efforts to dig into the IRS' practice", '% wrong in their view of government and society.']
+
+Feature 4742 | sim=0.964 | freq_shift=-0.2170
+  BASE top-3: [' (or nightmarish?) compositions. Each mixed', '\n\nIt turns out his magnum opus', ' first completely soft, autonomous, and untethered']
+  FT   top-3: [', and being blind to the fact that one’', ' I will actually vote however my wife tells me to', ' the fact that one’s long-term personal']
+
+Feature 3421 | sim=0.938 | freq_shift=-0.2144
+  BASE top-3: [' front of the American people and saying I really don', ' rescuing Princess Zelda and Hyrule from the', "cribe the user's voice and audio recordings of conference"]
+  FT   top-3: [' can rise above the divisions and bring us', ' for creating microservice boundaries and dispel the myth', ' “complex set of issues and propose solutions.” The']

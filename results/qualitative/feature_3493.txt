@@ -1,0 +1,37 @@
+Feature 3493 (Base) → Feature 4703 (FT)
+Cosine similarity: 0.9912  |  Category: stable  |  Freq shift: +0.2614
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[6.484] ' Javascript to watch this video\n\nThe mother of'
+[6.468] '<|endoftext|>Hello all,\n\nIn this newsletter'
+[6.459] '<|endoftext|>Image copyright Getty Images\n\nA new study'
+[6.441] '<|endoftext|>Hello there,\n\nWe’re'
+[6.440] ' 12:58 IST\n\nJ ust'
+[6.438] ' Facebook as a news source\n\nNews bias on'
+[6.430] '<|endoftext|>T.J. Rivera’'
+[6.420] '<|endoftext|>06.07.2017\n'
+[6.418] 'razer Brown writes,\n\nAt London Super'
+[6.418] ' For its reputation, mainly\n\nPredictions are'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[7.067] '<|endoftext|>06.07.2017\n'
+[7.048] '<|endoftext|>T.J. Rivera’'
+[7.033] '<|endoftext|>8.1K Shares'
+[7.028] '<|endoftext|>Vancouver, B.C. – Vancouver'
+[7.027] '<|endoftext|>I. Introduction In the midst'
+[7.018] '<|endoftext|>1. The Jockboard'
+[7.018] '<|endoftext|>1. Riding 100K'
+[7.010] '<|endoftext|>B. Sherwood Lollar'
+[7.004] '<|endoftext|>Every Thursday, NHL.com will look ahead'
+[7.000] '<|endoftext|>S. 3100: Stop'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

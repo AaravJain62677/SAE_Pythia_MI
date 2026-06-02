@@ -1,0 +1,37 @@
+Feature 285 (Base) → Feature 2686 (FT)
+Cosine similarity: 0.5507  |  Category: drifted  |  Freq shift: +0.0237
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.036] ' worldwide purge of the Khazarian mafia now'
+[0.017] 'igi Donnarumma will not renew his contract'
+[0.017] " confirm.lower() == 'yes':\n    "
+[0.015] "\n    if intake == 'done': break\n"
+[0.014] ' Donnarumma will not renew his contract,'
+[0.012] "Happy' and genre == 'Action':\n    "
+[0.009] ' believe Sarah Palin is qualified to be president.\n'
+[0.007] 'ünleri firmalar tercih etme'
+[0.003] ' the area in the Gulf of Thailand, where invest'
+[0.003] 'ahmt und damit vor einer unsachgem'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[3.229] ' on all seven counts in a campaign finance conspiracy scheme'
+[3.085] ' on his shoulders as the new franchise player that will'
+[2.978] ' from India.The VR World Congress, to be'
+[2.833] ' a foreign child who has been adopted or legally placed'
+[2.826] ' / 1 Caption Close 2015 brought record passenger traffic to'
+[2.801] ' account or have attended the product address of CodeR'
+[2.761] 'idents in a Dublin city centre apartment complex have been'
+[2.700] ' Monday in Davie in an accident people at the'
+[2.667] " I've just made a big career change, joining"
+[2.636] ' 1 Caption Close 2015 brought record passenger traffic to Bush'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

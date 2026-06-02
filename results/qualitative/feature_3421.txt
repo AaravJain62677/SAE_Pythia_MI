@@ -1,0 +1,37 @@
+Feature 3421 (Base) → Feature 906 (FT)
+Cosine similarity: 0.9381  |  Category: stable  |  Freq shift: -0.2144
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[2.237] ' front of the American people and saying I really don'
+[2.119] ' rescuing Princess Zelda and Hyrule from the'
+[2.103] "cribe the user's voice and audio recordings of conference"
+[2.094] ' for creating microservice boundaries and dispel the myth'
+[2.084] ' ironic repetition of the language and categories, at once'
+[2.075] ' we need are more champions and less mentors,'
+[2.067] ' gotten international attention as well as quite a few video'
+[2.062] ' it would give me inspiration and hope,” Ferrign'
+[2.057] '\n\n"His leadership and competitiveness for sure'
+[2.055] ' of the Saber class and uses a Noble Ph'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.659] ' can rise above the divisions and bring us'
+[4.465] ' for creating microservice boundaries and dispel the myth'
+[4.275] ' “complex set of issues and propose solutions.” The'
+[4.221] ', and being blind to the fact that one’'
+[4.183] ' cartography can embed power and sometimes inequality. In'
+[4.142] ' your surroundings. Find allies and accomplices.\n'
+[4.141] ' a manner that fuels terror and terrorists targeting Bahrain'
+[4.112] ' one’s long-term personal interests actually correspond'
+[4.102] ' believe their voices, experiences and identities deserve to be'
+[4.086] ' to disprove past ideals and new ideas were shown'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

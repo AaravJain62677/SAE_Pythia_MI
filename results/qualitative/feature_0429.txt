@@ -1,0 +1,37 @@
+Feature 429 (Base) → Feature 2976 (FT)
+Cosine similarity: 0.5505  |  Category: drifted  |  Freq shift: +0.0161
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[0.040] 'images\\/thumb\\/0\\/0f\\/Hang'
+[0.040] 'com\\/images\\/thumb\\/0\\/0f'
+[0.026] '\n\nThe S&P 500 gyrated'
+[0.018] 'aco Dinosaur—————————————————————-2'
+[0.018] ' near the Pakistan border. Photo provided by the Bennett'
+[0.014] " you want to leave: '))\ntip_"
+[0.012] '-0 MMA, 0-0 UFC) are'
+[0.011] 's total exports with a primary focus in the electronics'
+[0.008] 'ozmo\n\n—————————————————————-2'
+[0.008] " the number of friends: '))\nper_"
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[2.840] '%). This follows three years of nearly no growth ('
+[2.385] ' confirmed dead. Up to 30 more are probably ent'
+[2.380] ' Cleveland on his shoulders as the new franchise player that'
+[2.135] 'images\\/thumb\\/0\\/0f\\/Hang'
+[2.128] 'com\\/images\\/thumb\\/0\\/0f'
+[2.122] '% to 3%). This follows three years of nearly'
+[1.978] 'John\n\n2015 picks: 0-0\n'
+[1.817] ' nearly no growth (2014-2016). (G'
+[1.799] ' 3%). This follows three years of nearly no growth'
+[1.730] ' At least 18 people have been confirmed dead. Up'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 

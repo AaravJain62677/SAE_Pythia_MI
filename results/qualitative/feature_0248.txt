@@ -1,0 +1,37 @@
+Feature 248 (Base) → Feature 5436 (FT)
+Cosine similarity: 0.9740  |  Category: stable  |  Freq shift: -0.2204
+======================================================================
+
+TOP ACTIVATING SEQUENCES — BASE MODEL:
+----------------------------------------
+[4.824] '% wrong in their view of government and society.'
+[4.763] ' that step requires a dive into the confusing field of'
+[4.749] ' foreign tourists’ cash. But last week’s'
+[4.689] ' into microservices. They examine various approaches for creating'
+[4.684] ' firm is hoping to revolutionise the business of providing'
+[4.636] ' increased distrust in minority communities; '
+[4.551] ' Z2, delves into the powerful ideology that'
+[4.537] ' cold colours and in contrast to the vast sea of'
+[4.422] ' grand us a first view on a distant future -'
+[4.356] ' managed to steal market share from Apple last quarter.'
+
+
+TOP ACTIVATING SEQUENCES — FINE-TUNED MODEL:
+----------------------------------------
+[4.541] ' bureaucrats are wading into people’s affairs'
+[4.503] "-day efforts to dig into the IRS' practice"
+[4.332] '% wrong in their view of government and society.'
+[4.278] ' cold colours and in contrast to the vast sea of'
+[4.255] ' into microservices. They examine various approaches for creating'
+[4.123] ' interests, and being blind to the fact that one'
+[4.114] ' that step requires a dive into the confusing field of'
+[4.107] ' to continually check our understanding of the t'
+[4.074] ' correctness but are often blind to their o'
+[4.052] ' share and took full advantage of it. he K'
+
+
+MANUAL LABEL
+  Base feature meaning:
+  FT feature meaning:
+  Unexpected drift?      YES / NO
+  Notes: 
