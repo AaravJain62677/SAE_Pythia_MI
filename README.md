@@ -71,19 +71,14 @@ numpy, pandas, matplotlib, seaborn, scikit-learn, tqdm, einops
 ## Running the Pipeline
 
 ```bash
-# Step 1 — Train SAE on base model (~1–2 hrs on A100)
 python 01_train_sae_base.py
 
-# Step 2 — Fine-tune Pythia on Python code (~30 min)
 python 02_finetune.py
 
-# Step 3 — Train SAE on fine-tuned model (~1–2 hrs)
 python 03_train_sae_finetuned.py
 
-# Step 4 — Compare features and generate plots
 python 04_compare_features.py
 
-# Step 5 — Qualitative analysis of individual features
 python 05_qualitative_analysis.py
 ```
 
@@ -152,16 +147,6 @@ The activation frequency shift histogram is right-skewed with a sharp peak at ze
 ![Direction preservation vs activation change](results/figures/fig2_sim_vs_freq_shift.png)
 
 The scatter plot reveals a clear structural pattern. New/Dead features (red, cosine sim < 0.5) cluster on the left and show high *positive* frequency shifts — these are features that have been reassigned to fire on code-specific token patterns. Stable features (green, cosine sim ≥ 0.9) cluster tightly at x ≈ 1.0 but show a wide spread in frequency shift, meaning many semantically preserved features nonetheless change *how often* they are recruited. The small drifted population (orange) sits in between with modest frequency changes. This two-dimensional picture suggests fine-tuning primarily works by replacing features wholesale rather than rotating existing ones.
-
----
-
-## Key Design Choices
-
-**Why layer 8?** Layer 8 of a 12-layer model sits in the upper-middle range where residual stream features tend to be semantically rich (syntactic features are more prominent in early layers; positional and task-level features emerge in the final layers). This makes it a good place to observe domain-level conceptual drift.
-
-**Why cosine similarity for matching?** SAE decoder directions represent the "meaning" of a feature in model space. Cosine similarity measures how much that direction rotates after fine-tuning, independent of feature scale — a natural metric for direction preservation.
-
-**Why measure activation frequency shift?** A feature can preserve its direction but fire much more (or less) often after fine-tuning. Frequency shift captures this second dimension of change: *usage* as opposed to *meaning*.
 
 ---
 
