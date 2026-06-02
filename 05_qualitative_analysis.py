@@ -25,11 +25,28 @@ def find_latest_checkpoint(base_path):
     checkpoints = sorted(path.glob("final_*"), key=lambda x: int(x.name.split("_")[1]) if "_" in x.name else 0)
     return str(checkpoints[-1]) if checkpoints else base_path
 
-sae_base = SAE.load_from_pretrained(find_latest_checkpoint("checkpoints/sae_base"), device=device)
-sae_ft   = SAE.load_from_pretrained(find_latest_checkpoint("checkpoints/sae_finetuned"), device=device)
+sae_base = SAE.load_from_pretrained(
+    "checkpoints/sae_base/ojgjfzus/3751936",
+    device=device
+)
+
+sae_ft = SAE.load_from_pretrained(
+    "checkpoints/sae_finetuned/rls4ykyf/3751936",
+    device=device
+)
 
 model_base = HookedTransformer.from_pretrained(BASE_MODEL, device=device)
-model_ft   = HookedTransformer.from_pretrained(FT_MODEL,   device=device)
+from transformers import AutoModelForCausalLM
+
+hf_ft_model = AutoModelForCausalLM.from_pretrained(
+    "checkpoints/pythia_finetuned"
+)
+
+model_ft = HookedTransformer.from_pretrained(
+    "EleutherAI/pythia-160m",
+    hf_model=hf_ft_model,
+    device=device,
+)
 
 df = pd.read_csv(RESULTS_DIR / "feature_comparison.csv")
 with open(RESULTS_DIR / "summary_stats.json") as f:
@@ -52,8 +69,15 @@ raw = load_dataset("Skylion007/openwebtext", split="train", streaming=True)
 sample_texts = [x["text"] for x in raw.take(2000)]
 
 # Also add some Python code samples to see if code features activate
-code_raw = load_dataset("bigcode/the-stack", data_dir="data/python", split="train", streaming=True, trust_remote_code=True)
-code_samples = [x["content"][:300] for x in code_raw.take(200)]
+code_raw = load_dataset(
+    "flytech/python-codes-25k",
+    split="train"
+)
+
+code_samples = [
+    x["output"][:300]
+    for x in code_raw.select(range(min(200, len(code_raw))))
+]
 
 all_texts = sample_texts + code_samples
 
@@ -121,7 +145,7 @@ for feat_id in tqdm(features_to_analyze, desc="Analyzing features"):
 
     # Save to text file
     out_path = QUAL_DIR / f"feature_{feat_id:04d}.txt"
-    with open(out_path, "w") as f:
+    with open(out_path, "w" , encoding = "UTF-8") as f:
         f.write(f"Feature {feat_id} (Base) → Feature {matched_ft_id} (FT)\n")
         f.write(f"Cosine similarity: {cosine_sim:.4f}  |  Category: {category}  |  Freq shift: {freq_shift:+.4f}\n")
         f.write("=" * 70 + "\n\n")
@@ -147,7 +171,7 @@ for feat_id in tqdm(features_to_analyze, desc="Analyzing features"):
 print("\nGenerating qualitative summary for report")
 
 summary_path = QUAL_DIR / "QUALITATIVE_SUMMARY.txt"
-with open(summary_path, "w") as f:
+with open(summary_path, "w" , encoding = "UTF-8") as f:
     f.write("QUALITATIVE FEATURE ANALYSIS SUMMARY\n")
     f.write("=" * 70 + "\n\n")
 

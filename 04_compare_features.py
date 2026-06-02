@@ -11,8 +11,8 @@ from transformers import AutoTokenizer
 from sae_lens import SAE
 
 #Paths 
-BASE_SAE_PATH      = "checkpoints/sae_base"
-FT_SAE_PATH        = "checkpoints/sae_finetuned"
+BASE_SAE_PATH      = "checkpoints/sae_base/ojgjfzus/3751936"
+FT_SAE_PATH        = "checkpoints/sae_finetuned/rls4ykyf/3751936"
 BASE_MODEL_NAME    = "EleutherAI/pythia-160m"
 FT_MODEL_PATH      = "checkpoints/pythia_finetuned"
 RESULTS_DIR        = Path("results")
@@ -36,8 +36,8 @@ def find_latest_checkpoint(base_path):
     # fallback: use base path directly
     return base_path
 
-base_ckpt = find_latest_checkpoint(BASE_SAE_PATH)
-ft_ckpt   = find_latest_checkpoint(FT_SAE_PATH)
+base_ckpt = BASE_SAE_PATH
+ft_ckpt   = FT_SAE_PATH
 
 print(f"  Base SAE:       {base_ckpt}")
 print(f"  Finetuned SAE:  {ft_ckpt}")
@@ -90,8 +90,13 @@ tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL_NAME)
 
 # Load both models
 model_base = HookedTransformer.from_pretrained("EleutherAI/pythia-160m", device=device)
-model_ft   = HookedTransformer.from_pretrained(FT_MODEL_PATH, device=device)
-
+from transformers import AutoModelForCausalLM
+ft_hf = AutoModelForCausalLM.from_pretrained(FT_MODEL_PATH)
+model_ft = HookedTransformer.from_pretrained(
+    "EleutherAI/pythia-160m",
+    hf_model=ft_hf,
+    device=device,
+)
 # Sample text
 raw = load_dataset("Skylion007/openwebtext", split="train", streaming=True)
 sample_texts = [x["text"] for x in raw.take(500)]
