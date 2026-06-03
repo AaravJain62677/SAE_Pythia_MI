@@ -72,4 +72,3 @@ print(f"  Output:   checkpoints/sae_base/\n")
 sae = LanguageModelSAETrainingRunner(cfg).run()
 
 print("\nSAE saved to checkpoints/sae_base/")
-print("Next: run 02_finetune.py")

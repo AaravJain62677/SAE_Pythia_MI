@@ -107,4 +107,3 @@ model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
 
 print(f"\n Fine-tuned model saved to {OUTPUT_DIR}/")
-print("Next: run 03_train_sae_finetuned.py")

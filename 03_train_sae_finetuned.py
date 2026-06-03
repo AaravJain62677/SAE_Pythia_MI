@@ -73,4 +73,3 @@ print(f"  Dataset:  OpenWebText (same as Phase 1)\n")
 
 sae = runner.run()
 print("\nSAE saved to checkpoints/sae_finetuned/")
-print("Next: run 04_compare_features.py")
